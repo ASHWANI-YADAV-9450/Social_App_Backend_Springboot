@@ -38,8 +38,10 @@ public class ChatServiceImplementation implements ChatService{
 	public Chat findChatById(Integer chatId) throws Exception {
 		Optional<Chat> opt = chatRepository.findById(chatId);
 		
+		System.out.print("aaaa---  "+ chatId);
+		
 		if(opt.isEmpty()) {
-			throw new Exception("Chat not found with id -"+ chatId);
+			throw new Exception("Chat not found with id - "+ chatId);
 		}
 		
 		return opt.get()

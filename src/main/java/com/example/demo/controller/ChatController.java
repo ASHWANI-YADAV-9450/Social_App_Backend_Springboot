@@ -28,7 +28,9 @@ public class ChatController {
 	
 	
 	@PostMapping("/api/chats")
-	public Chat createChat(@RequestHeader("Authorization")String jwt, @RequestBody CreateChatRequest req) throws Exception  {
+	public Chat createChat(
+			@RequestHeader("Authorization")String jwt,
+			@RequestBody CreateChatRequest req) throws Exception  {
 		
 		User reqUser = userService.findUserByJwt(jwt);
 		User user2 = userService.findUserById(req.getUserId());
@@ -40,7 +42,7 @@ public class ChatController {
 	
 	
 	@GetMapping("/api/chats")
-	public List<Chat> createChat(@RequestHeader("Authorization")String jwt)  {
+	public List<Chat> findUserChat(@RequestHeader("Authorization")String jwt)  {
 		
 		User user = userService.findUserByJwt(jwt);
 		

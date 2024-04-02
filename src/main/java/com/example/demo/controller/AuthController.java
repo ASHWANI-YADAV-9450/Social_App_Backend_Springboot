@@ -38,7 +38,7 @@ public class AuthController {
 	
 	//  auth/signin
 //	 @CrossOrigin(origins = "http://localhost:3000")
-	@PostMapping("/sigup")
+	@PostMapping("/signup")
 	public AuthResponse createUser(@RequestBody User user) throws Exception {
 		
 		User isExist = userRepository.findByEmail(user.getEmail());
